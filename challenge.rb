@@ -4,9 +4,9 @@
 # Question 1: Ruby objects and classes.
 # How would one find the class of the below objects.
 
-"Hello World"
-33
-65.89
+"Hello World".class
+33.class
+65.89.class
 
 # Question 2: Booleans
 # What would be the result of executing the below statements
@@ -17,6 +17,7 @@ else
   puts "it's false"
 end
 
+
 # 2.1 Substitue "hello" && 4.5 for 33 && 55 above. What's the output?
 # 2.2 Substitue nil && 88 for 33 && 55 above. What's the output?
 # 2.4 Substitue 63.4 < 64. What's the output?
@@ -25,9 +26,12 @@ end
 
 # How would you (Yes, you can look up the String methods!):
 
-# 3.1. determine if a string is included another another string?
+# 3.1. determine if a string is includes another string?
+#.include?
 # 3.2. determine if the length of a string?
+#.length
 # 3.3. Go from the string "eels in my hovercraft" to "fish in my sink" but don't
+#.gsub
 # change the string "eels in my hovercraft"
 
 
@@ -36,7 +40,13 @@ end
 # to the string should be made in-place. (Unless told otherwise, like in 4.3.)
 
 vehicle = "4 wheel Bus"
+puts vehicle
 
+vehicle.gsub(/4/ , '6')
+puts vehicle
+
+vehicle.gsub(/bus/, 'tank')
+puts vehicle
 # 4.1 to "6 wheel Bus"
 # 4.2 to "6 wheel tank"
 # 4.3 Create a NEW string from the string in 4.2 that will be
@@ -50,6 +60,24 @@ vehicle = "4 wheel Bus"
 # - aaaah maaan c'mon, huh, WTF
 # - I'm not kidding, say unkind works to a user that thinks your 10 years older
 #   than you are.
+
+age = 24
+guess = 5
+tries = 0
+max_tries = 4
+
+while guess != number
+  puts "Guess how old I am. "
+  guess = gets.chomp.to_i
+  unless tries < max_tries
+    puts "Sorry, you did not guess my age. :("
+    break
+  end
+  tries += 1
+end
+
+puts "You guessed right!!" if guess == number
+puts "Do I look like a grandma, fool" else guess < number
 
 # Bonus Question: Who said this?
 
